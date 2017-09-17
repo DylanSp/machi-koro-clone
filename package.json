@@ -1,0 +1,20 @@
+{
+  "name": "machi-koro-clone",
+  "version": "0.0.1",
+  "description": "Clone/reflavor of the board game Machi Koro",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanSp/machi-koro-clone.git"
+  },
+  "author": "Dylan Sprague",
+  "bugs": {
+    "url": "https://github.com/DylanSp/machi-koro-clone/issues"
+  },
+  "homepage": "https://github.com/DylanSp/machi-koro-clone#readme",
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  }
+}
