@@ -15,9 +15,9 @@
     "debug": "npm run build && npm run watch-debug",
     "serve-debug": "nodemon --inspect dist/server.js",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
-    "docker-build": "sudo docker build -t machi-koro-clone:`git rev-parse HEAD` .",
-    "docker-run": "sudo docker run -p 3000:3000 -it --rm machi-koro-clone run serve-prod",
-    "docker-test": "sudo docker run -t --rm machi-koro-clone test"
+    "docker-build": "npm run build && sudo docker build -t machi-koro-clone:`git rev-parse HEAD` .",
+    "docker-run": "npm run docker-build && sudo docker run -p 3000:3000 -it --rm machi-koro-clone run serve-prod",
+    "docker-test": "npm run docker-build && sudo docker run -t --rm machi-koro-clone test"
   },
   "repository": {
     "type": "git",
