@@ -7,7 +7,7 @@
     "build": "npm run build-ts && npm run tslint",
     "serve-dev": "nodemon dist/server.js",
     "serve-prod": "node dist/server.js",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-dev\"",
     "test": "jest",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
