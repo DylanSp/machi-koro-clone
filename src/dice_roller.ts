@@ -1,16 +1,12 @@
-enum NumDiceRolled {
-    One = 1,
-    Two,
-    ThreeChooseTwo
-}
+type NumDiceRolled = "One" | "Two" | "ThreeChooseTwo";
 
 function rollGameDice (num: NumDiceRolled): number | number[] {
     switch (num) {
-        case NumDiceRolled.One:
+        case "One":
             return dieroll();
-        case NumDiceRolled.Two:
+        case "Two":
             return dieroll() + dieroll();
-        case NumDiceRolled.ThreeChooseTwo:
+        case "ThreeChooseTwo":
             const dieOne: number = dieroll();
             const dieTwo: number = dieroll();
             const dieThree: number = dieroll();
