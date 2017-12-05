@@ -1,2 +1,2 @@
-export class Establishment {
+export abstract class Establishment {
 }
