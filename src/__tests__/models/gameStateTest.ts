@@ -1,4 +1,4 @@
-import { GameState } from "../../models/game_state";
+import { GameState } from "../../models/gameState";
 import { WheatField } from "../../models/establishments/wheatField";
 import { Bakery } from "../../models/establishments/bakery";
 
