@@ -8,6 +8,13 @@ export class Player {
 
     constructor () {
         this.money = 0;
-        this.establishments = [new WheatField(), new Bakery()];
+        this.establishments = new Array<Establishment>();
+    }
+
+    public static createNewPlayer (): Player {
+        const player: Player = new Player();
+        player.money = 3;
+        player.establishments = [new WheatField(), new Bakery()];
+        return player;
     }
 }

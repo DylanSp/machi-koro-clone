@@ -12,12 +12,22 @@ export class GameState {
         }
     }
 
-    static createNewGame (numPlayers: number): GameState {
+    public static createNewGame (numPlayers: number): GameState {
         const state: GameState = new GameState(numPlayers);
-        for (const player of state.players) {
-            player.money = 3;
+        for (let i = 0; i < numPlayers; i++) {
+            state.players[i] = Player.createNewPlayer();
         }
         return state;
+    }
+
+    public triggerEffects(dieroll: number) {
+        this.players.forEach(player => {
+            player.establishments.forEach(establishment => {
+                if (establishment.triggersOn(dieroll)) {
+                    establishment.changeState(this);
+                }
+            });
+        });
     }
 
 }
