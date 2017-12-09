@@ -9,4 +9,12 @@ describe("Wheat Field", () => {
         state.triggerEffects(1);
         expect(state.players[0].money).toBe(1);
     });
+
+    it("should give zero coins on a roll of 2", () => {
+        const state: GameState = new GameState(1);
+        state.players[0].establishments.push(new WheatField());
+        expect(state.players[0].money).toBe(0);
+        state.triggerEffects(2);
+        expect(state.players[0].money).toBe(0);
+    });
 });
