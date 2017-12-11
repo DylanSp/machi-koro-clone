@@ -24,7 +24,7 @@ export class GameState {
         this.players.forEach(player => {
             player.establishments.forEach(establishment => {
                 if (establishment.triggersOn(dieroll)) {
-                    establishment.changeState(this);
+                    establishment.changeState(player);
                 }
             });
         });

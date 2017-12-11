@@ -14,7 +14,7 @@ export class Player {
     public static createNewPlayer (): Player {
         const player: Player = new Player();
         player.money = 3;
-        player.establishments = [new WheatField(), new Bakery()];
+        player.establishments = [new WheatField(player), new Bakery(player)];
         return player;
     }
 }
