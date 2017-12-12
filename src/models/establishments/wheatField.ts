@@ -1,5 +1,4 @@
 import { Establishment } from "./establishment";
-import { GameState } from "../gameState";
 import { Player } from "../player";
 
 export class WheatField extends Establishment {
