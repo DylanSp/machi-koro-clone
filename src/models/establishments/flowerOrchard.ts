@@ -1,13 +1,11 @@
 import { Establishment } from "./establishment";
 import { Player } from "../player";
+import { UniversalEstablishment } from "./universalEstablishment";
 
-export class FlowerOrchard extends Establishment {
+export class FlowerOrchard extends UniversalEstablishment {
     constructor (owner: Player) {
         super(owner);
         this.triggerNumbers = [4];
-    }
-
-    changeState (triggeringPlayer: Player): void {
-        triggeringPlayer.money += 2;
+        this.rewardAmount = 2;
     }
 }
