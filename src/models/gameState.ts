@@ -20,11 +20,11 @@ export class GameState {
         return state;
     }
 
-    public triggerEffects(dieroll: number) {
+    public triggerEffects(triggeringPlayer: Player, dieroll: number) {
         this.players.forEach(player => {
             player.establishments.forEach(establishment => {
                 if (establishment.triggersOn(dieroll)) {
-                    establishment.changeState(player);
+                    establishment.changeState(triggeringPlayer);
                 }
             });
         });
