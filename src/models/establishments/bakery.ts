@@ -9,10 +9,10 @@ export class Bakery extends Establishment {
 
     changeState (triggeringPlayer: Player): void {
         if (triggeringPlayer === this.owner) {
-            if (triggeringPlayer.landmarkOwnership.get("Shopping Mall")) {
-                triggeringPlayer.money += 2;
+            if (this.owner.landmarkOwnership.get("Shopping Mall")) {
+                this.owner.money += 2;
             } else {
-                triggeringPlayer.money += 1;
+                this.owner.money += 1;
             }
         }
     }
