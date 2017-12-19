@@ -50,4 +50,28 @@ describe("Bakery", () => {
             expect(owningPlayer.money).toBe(0);
         });
     });
+
+    describe("Output should be doubled by Shopping Mall", () => {
+        let state: GameState;
+        let player: Player;
+
+        beforeEach(() => {
+            state = new GameState(1);
+            player = state.players[0];
+            player.establishments.push(new Bakery(player));
+            player.landmarkOwnership.set("Shopping Mall", true);
+        });
+
+        it("should give two coins on a roll of 2 when owning a Shopping Mall", () => {
+            expect(player.money).toBe(0);
+            state.triggerEffects(player, 2);
+            expect(player.money).toBe(2);
+        });
+
+        it("should give zero coins on a roll of 1 when owning a Shopping Mall", () => {
+            expect(player.money).toBe(0);
+            state.triggerEffects(player, 1);
+            expect(player.money).toBe(0);
+        });
+    });
 });
