@@ -46,8 +46,10 @@ describe("Bakery", () => {
 
         it("should give zero coins on a roll of 2", () => {
             expect(owningPlayer.money).toBe(0);
+            expect(triggeringPlayer.money).toBe(0);
             state.triggerEffects(triggeringPlayer, 2);
             expect(owningPlayer.money).toBe(0);
+            expect(triggeringPlayer.money).toBe(0);
         });
     });
 
