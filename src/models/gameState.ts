@@ -30,4 +30,14 @@ export class GameState {
         });
     }
 
+    public winningPlayer(): Player | undefined {
+        // intentionally uninitialized; will still be undefined if no one's won
+        let winningPlayer;
+        this.players.forEach(player => {
+            if (player.hasWon()) {
+                winningPlayer = player;
+            }
+        });
+        return winningPlayer;
+    }
 }
