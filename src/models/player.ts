@@ -12,18 +12,18 @@ export class Player {
         this.money = 0;
         this.establishments = new Array<Establishment>();
         this.landmarkOwnership = new Map<Landmark, boolean>();
-        this.landmarkOwnership.set("Harbor", false);
-        this.landmarkOwnership.set("Train Station", false);
-        this.landmarkOwnership.set("Shopping Mall", false);
-        this.landmarkOwnership.set("Amusement Park", false);
-        this.landmarkOwnership.set("Moon Tower", false);
-        this.landmarkOwnership.set("Airport", false);
     }
 
     public static createNewPlayer (): Player {
         const player: Player = new Player();
         player.money = 3;
         player.establishments = [new WheatField(player), new Bakery(player)];
+        player.landmarkOwnership.set("Harbor", false);
+        player.landmarkOwnership.set("Train Station", false);
+        player.landmarkOwnership.set("Shopping Mall", false);
+        player.landmarkOwnership.set("Amusement Park", false);
+        player.landmarkOwnership.set("Moon Tower", false);
+        player.landmarkOwnership.set("Airport", false);
         return player;
     }
 
